@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+// Variables
+$primaire: #7aaaf8;
+$primaire_dark: #4f8dd4;
+$bg_primaire:#141414;
+$bg_secondaire: rgba(55, 48, 66, 0.50);
+// $bg_secondaire: #373042;
+$bg_footer: #ebebeb;
+$texte_color: #dedede;
+$texte_color_dark: #9c9c9c;
+// $texte_color: #dedede;
+$texte_footer: #6E6E6E;
+$transition: all 0.4s ease;
+$radius: 24px;
+
+// Fonts (servi localement)
+// @font-face {
+//     font-family: 'Ubuntu Local';
+//     src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+// }
+
+// Custom classes
+.text-primaire,
+.active {
+    color: $primaire;
+    transition: $transition;
+}
+
+a.active {
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 5px;
+}
+
+.text-color {
+    color: $texte_color;
+}
+
+.active:hover {
+    color: $primaire_dark;
+}
+
+.text-footer {
+    color: $texte_footer;
+}
+
+.bg-primaire {
+    background-color: $bg_primaire;
+}
+
+.bg-secondaire {
+    background-color: $bg_secondaire;
+}
+
+.bg-footer {
+    background-color: $bg_footer;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* html, */
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(28, 30, 32, 0.5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(49, 52, 54, 0.5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(69, 30, 169, 0.9);
+}
+body {
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    font-size: 16px;
+    background-color: $bg_primaire;
+    font-family: 'Ubuntu', sans-serif; // servi localement avec 'Ubuntu Local'
+
+    a {
+        color: $primaire;
+    }
+
+    a:focus,
+    a:hover {
+        color: $primaire_dark;
+    }
+
+}
+// body {
+//     // min-height: 100%;
+//     overflow-x: hidden;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     margin: 0;
+//     position: relative;
+// }
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    scroll-behavior: smooth;
+    z-index: 0;
+}
+
+#bg {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: -3;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/********
+HEADER
+********/
+header {
+    position: sticky;
+    border: solid 2px rgba(60, 52, 103, 0.8);
+    .form-control {
+        border-radius: $radius;
+        border: none;
+        z-index: 4;
+
+        &:focus {
+            border-color: none;
+            box-shadow: none;
+            background-color: $primaire;
+            color: white;
+
+            &::placeholder {
+                color: white;
+            }
+        }
+    }
+
+    nav div a {
+        color: $texte_color;
+    }
+
+    h1 {
+        color: $primaire;
+        font-size: 2em;
+    }
+
+    p {
+        max-width: 500px;
+        color: $texte_color;
+    }
+}
+main {
+            // margin-top: -150px;
+    // background-image: url("../images/oso_bigblock0.png");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // top: 0;
+    // left: 0;
+    height: 20000px;
+    // position: absolute;
+    z-index: 2;
+    .station {
+                margin-bottom: -250px;
+    }
+}
+/********
+FOOTER
+********/
+footer {
+    position: sticky;
+    top: 100%;
+            z-index: 4;
+}
+
+/********
+filmS
+********/
+.film-container {
+    cursor: pointer; // pour simuler un lien cliquable
+    z-index: 4;
+    margin-top: 20%;
+    // position: sticky;
+    // height: 520px;
+    // copié de .card
+    // box-shadow: inset 2px 2px 16px #141414;
+    .film {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        // background-color: #fff;
+        background-clip: border-box;
+        /* border: 1px solid rgba(0,0,0,.125); */
+        border-radius: 0.25rem;
+        // box-shadow: inset 2px 2px 2px 40px rgba(0, 0, 0, .5);
+        transition: $transition;
+        overflow: hidden; // pour éviter que l'image sorte de son cadre lors de la transition
+        img {
+            filter: grayscale(.5);
+            transform: scale(1.0); // valeur initiale > 1 pour éviter une transition saccadée
+            transition: $transition;
+            z-index: -1; // pour éviter que l'image s'agrandisse au-dessus du texte
+            margin-bottom: 20px;;
+            height: 279px;
+            object-fit: contain;
+            object-position: center;
+            // border-radius: 100px;
+            // box-shadow: inset 2px 2px 64px #141414;
+            border: solid 2px rgb(110, 97, 187);
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            border-bottom-left-radius: 200px;
+            border-bottom-right-radius: 200px;
+            opacity: 0.5;
+        }
+
+        // copié de card-body
+        .film-body {
+            flex: 1 1 auto;
+            padding: 0.75rem 0.75rem;
+            // background-color: $bg_primaire;
+            transition: 0.9s;
+            border: solid 2px rgba(60, 52, 103, 0.8);
+
+            h5 {
+                color: $texte_color;
+                font-size: 1.3rem;
+                transition: $transition;
+            }
+
+            h6 {
+                color: $texte_color_dark;
+                font-size: 1em;
+            }
+
+            p {
+                color: $texte_color_dark;
+                /** line-clamping one-line **/
+                // text-overflow: ellipsis;
+                // overflow: hidden;
+                // white-space: nowrap;
+
+                /** line-clamping multi-line ex., 3 **/
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+                filter: grayscale(0);
+                // border-radius: 0%;
+                border: solid 6px rgb(102, 89, 173);
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                opacity: 1;
+                // border-top-left-radius: 0%;
+                // border-top-right-radius: 0%;
+            }
+
+            .film-body {
+                background-color: rgba(60, 52, 103, 0.8);
+
+                h5 {
+                    color: $primaire;
+                }
+                a {
+                    color:rgb(231, 229, 246);
+                }
+            }
+        }
+    }
+}
+
+/********
+TÉLÉVERSEMENT
+********/
+button,
+label {
+    background-color: $primaire;
+    border: none;
+    max-width: 350px !important;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: $radius;
+    color: white;
+    transition: $transition;
+
+    &:hover {
+        background-color: $primaire_dark;
+    }
+}
+
+/********
+SVG
+********/
+svg {
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+// rect pour cibler le background
+svg.like:hover rect {
+    fill: #54ae3e;
+}
+
+svg.like:hover path {
+    stroke-width: 3;
+}
+
+svg.dislike:hover rect {
+    fill: #c84444;
+}
+
+svg.dislike:hover path {
+    stroke-width: 3;
+}
+
+/********
+PUBLISH
+********/
+// Modification du select categories
+// copié de boostraps
+.form-floating {
+    &>.form-select {
+        background-color: $primaire;
+        color: white;
+        border: none;
+        border-radius: $radius;
+        max-width: 200px;
+
+        &:focus {
+            border: none;
+            box-shadow: none;
+        }
+
+        &~label {
+            opacity: .5;
+            color: white;
+        }
+    }
+}
+
+textarea,
+input[name="titre"] {
+    min-width: 80%;
+    border-radius: 24px;
+}
+
+textarea {
+    height: 500px;
+}
+
+
+
+/********
+AVATAR
+********/
+.dropdown-menu[data-bs-popper] {
+    right: 0;
+    left: unset;
+}
+
+// Petite flèche du menu avatar
+.link-dark {
+    color: $texte_color;
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+        color: $primaire;
+    }
+}

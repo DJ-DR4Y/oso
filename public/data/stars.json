@@ -1,0 +1,24 @@
+{
+    "votes": [
+        {
+            "titre": "Vote 1",
+            "image": "<?= BASE ?>/public/medias/images/starv3.png"
+        },
+        {
+            "titre": "Vote 2",
+            "image": "<?= BASE ?>/public/medias/images/starv3.png"
+        },
+        {
+            "titre": "Vote 3",
+            "image": "<?= BASE ?>/public/medias/images/starv3.png"
+        },
+        {
+            "titre": "Vote 4",
+            "image": "<?= BASE ?>/public/medias/images/starv3.png"
+        },
+        {
+            "titre": "Vote 5",
+            "image": "<?= BASE ?>/public/medias/images/starv3.png"
+        }
+    ]
+}
